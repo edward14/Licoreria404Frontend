@@ -1,0 +1,186 @@
+header {
+        background-color: #0a2ddc;
+        color: #171616;
+        padding: 1px;
+        text-align: center;
+    }
+ 
+button {
+    background-color: #160dc6;
+    color: #171616;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: #8B0A1A; /* Un rojo vino */
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #8B0A1A;
+  }
+  
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-card h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .product-card p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .client-card {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .client-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #8B0A1A;
+  }
+  
+  .client-card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  form {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+  
+  form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background-color: #6840c6;
+    color: rgb(189, 20, 20);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #660033;
+  }
+  
+  .home, .client-list, .favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .product-details {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .product-details h1 {
+    color: #8B0A1A;
+    margin-bottom: 1rem;
+  }
+  
+  .product-details ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .product-details .error {
+    color: red;
+    font-weight: bold;
+  }
