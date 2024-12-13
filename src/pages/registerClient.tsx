@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const RegisterClient: React.FC = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
   });
@@ -23,7 +23,7 @@ const RegisterClient: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Username" onChange={e => setFormData({ ...formData, username: e.target.value })} />
+      <input type="text" placeholder="name" onChange={e => setFormData({ ...formData, name: e.target.value })} />
       <input type="email" placeholder="Email" onChange={e => setFormData({ ...formData, email: e.target.value })} />
       <input type="password" placeholder="Password" onChange={e => setFormData({ ...formData, password: e.target.value })} />
       <button type="submit">Register User</button>

@@ -1,186 +1,303 @@
-header {
-        background-color: #0a2ddc;
-        color: #171616;
-        padding: 1px;
-        text-align: center;
-    }
- 
-button {
-    background-color: #160dc6;
-    color: #171616;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #f0f0f0;
+  background-color: #1c1c1c;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background: url('https://imagenes.eltiempo.com/files/image_1200_600/uploads/2022/12/07/6390d78ae411f.jpeg') center/cover no-repeat;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+  height: 350px; /* Aumenté un poco la altura */
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  flex-direction: column; /* Coloca los elementos uno debajo del otro */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 8px; /* Bordes redondeados para el fondo */
+  color: #f0f0f0; /* Cambié el color a blanco claro */
+  margin-bottom: 1rem; /* Espacio entre el título y el subtítulo */
+}
+
+header p {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #555555;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #d4af37;
+  transform: translateY(-5px);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #d4af37;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+/* Container for Products */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Section Title (Product List) */
+h3 {
+  color: #d4af37;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Merriweather', serif;
+}
+
+/* Product Grid Styles */
+.product-grid {
+  display: flex; /* Usamos flexbox */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten a nuevas filas */
+  gap: 1rem; /* Espacio entre tarjetas */
+  justify-content: center; /* Centra las tarjetas en el eje horizontal */
+  align-items: center; /* Centra las tarjetas en el eje vertical (en caso de filas desiguales) */
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #2e2e2e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 15px; /* Aumenté el padding para mayor espacio */
+  margin: 15px; /* Aumenté el margen */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px; /* Aumenté el ancho de la tarjeta */
+  height: auto;
+}
+
+.product-card img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+  height: 150px; /* Fija la altura de la imagen */
+  object-fit: cover; /* Mantiene la proporción y cubre el área sin distorsionar */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  font-size: 0.8rem;
+  color: #f0f0f0;
+  margin-bottom: 0.5rem;
+}
+
+.product-card button {
+  background-color: #d4af37;
+  color: #2e2e2e;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #a58329;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #2a2a2a;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+}
+
+/* Form Input Styles */
+input[type="text"], input[type="number"], textarea {
+  background-color: #333333; /* Fondo oscuro para inputs */
+  color: #f0f0f0; /* Texto claro */
+  border: 1px solid #444444; /* Borde gris oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px; /* Aumento del padding para mayor comodidad */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  margin-top: 10px;
+  font-size: 16px; /* Tamaño de fuente adecuado */
+  transition: border-color 0.3s ease; /* Efecto de transición */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  border-color: #d4af37; /* Borde dorado cuando se enfoca */
+}
+
+/* Placeholder Styles */
+input::placeholder, textarea::placeholder {
+  color: #b0b0b0; /* Color gris claro */
+  font-size: 16px; /* Tamaño de texto adecuado */
+  font-weight: normal; /* Eliminar la negrita */
+}
+
+/* Estilo para los botones submit */
+input[type="submit"] {
+  background-color: #d4af37; /* Color dorado */
+  color: #2e2e2e; /* Texto oscuro */
+  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px 25px; /* Aumenté el padding para hacerlo más grande */
+  font-size: 18px; /* Tamaño de la fuente más grande */
+  font-weight: normal;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+  width: 100%; /* Para que ocupe todo el ancho disponible */
+  margin-top: 20px; /* Margen superior */
+}
+
+/* Efecto hover para el botón submit */
+input[type="submit"]:hover {
+  background-color: #a58329; /* Un tono más oscuro del dorado para hover */
+  transform: scale(1.05); /* Le da un ligero aumento al botón */
+}
+
+/* Efecto focus para el botón submit */
+input[type="submit"]:focus {
+  outline: none; /* Elimina el contorno */
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7); /* Añade un halo dorado al enfocarlo */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  h1, h2, h3 {
-    color: #8B0A1A; /* Un rojo vino */
-  }
-  
-  p {
-    margin: 0.5rem 0;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #8B0A1A;
-  }
-  
-  
-  .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
+
+  nav ul {
+    top: 70px;
     width: 100%;
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+
+  .product-card, .user-card {
+    width: 90%;
+    margin: 10px auto;
   }
-  
-  .product-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 1rem;
-    max-width: 300px;
-    text-align: center;
+
+  .main-banner h2 {
+    font-size: 2rem;
   }
-  
-  .product-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .product-card h3 {
-    margin: 0.5rem 0;
-  }
-  
-  .product-card p {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .client-card {
-    background-color: #fefefe;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .client-card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #8B0A1A;
-  }
-  
-  .client-card p {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  form {
-    background-color: white;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-  }
-  
-  form input, form textarea, form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background-color: #6840c6;
-    color: rgb(189, 20, 20);
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #660033;
-  }
-  
-  .home, .client-list, .favorites {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .product-details {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-details img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  .product-details h1 {
-    color: #8B0A1A;
-    margin-bottom: 1rem;
-  }
-  
-  .product-details ul {
-    padding-left: 1.5rem;
-    list-style-type: disc;
-  }
-  
-  .product-details .error {
-    color: red;
-    font-weight: bold;
-  }
+}
